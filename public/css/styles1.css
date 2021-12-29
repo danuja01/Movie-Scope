@@ -1,0 +1,30 @@
+body {
+  background-color: black;
+  color: #fff;
+  text-align: center;
+}
+
+h5 {
+  color: gray;
+}
+
+/* Header */
+
+.header {
+  margin: 3% 7%;
+}
+
+.btn {
+  margin-top: 20px;
+}
+
+/* cards */
+
+.container-fluid {
+  align-items: center;
+  padding: 3% 15%;
+}
+
+.card {
+  text-align: left;
+}

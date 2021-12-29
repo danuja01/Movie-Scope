@@ -1,0 +1,62 @@
+/* Background image  */
+h1 {
+  font-size: 80px;
+  padding: 20px;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100vh; /* 100% of the viewport height */
+  margin: 0;
+}
+
+body {
+  background: url("/images/intro.jpeg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: #fff;
+  font-family: "Open Sans", Arial, Helvetica, Sans-Serif;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding-bottom: 20px;
+  height: auto;
+}
+
+/* Height for devices larger than 576px */
+@media (max-width: 988px) {
+  h1 {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 517px) {
+  .search {
+    display: block;
+    margin: 40px;
+  }
+  button {
+    margin: 25px;
+    width: 300px;
+  }
+}
+
+.mask {
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  height: 90%;
+}
+
+input[type="text"] {
+  width: 300px;
+  padding: 11.5px;
+  margin: 10px auto;
+}
+
+button {
+  margin: 10px 25px;
+}
