@@ -55,7 +55,6 @@ app.get("/result", (req, res) => {
 
 app.post("/result", (req, res) => {
   clickedID = req.body.submit;
-  console.log(clickedID);
   res.redirect("/details");
 });
 
