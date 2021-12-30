@@ -104,13 +104,17 @@ app.get("/details", (req, res) => {
       });
     })
     .catch(function (error) {
-      console.error(error);
+      app.redirect("/failure");
     });
 });
 
 app.post("/details", (req, res) => {
   searchTitle = req.body.mName;
   res.redirect("result");
+});
+
+app.get("/failure", (req, res) => {
+  res.render("failure");
 });
 
 app.listen(process.env.PORT || 3000, () => {
