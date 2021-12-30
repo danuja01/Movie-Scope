@@ -86,7 +86,7 @@ app.get("/details", (req, res) => {
         actorcharacter.push(response.data.actorList[i].asCharacter);
         actorImg.push(response.data.actorList[i].image);
       }
-
+      console.log(actorImg);
       res.render("details", {
         image: image,
         name: name,
@@ -99,13 +99,18 @@ app.get("/details", (req, res) => {
         rotten: rotten,
         plot: plot,
         castname: actorName,
-        castimg: actorImg,
+        imgsrc: actorImg,
         castcar: actorcharacter,
       });
     })
     .catch(function (error) {
       console.error(error);
     });
+});
+
+app.post("/details", (req, res) => {
+  searchTitle = req.body.mName;
+  res.redirect("result");
 });
 
 app.listen(process.env.PORT || 3000, () => {
