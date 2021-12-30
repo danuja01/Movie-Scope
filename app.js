@@ -62,7 +62,7 @@ app.get("/details", (req, res) => {
   const url1 =
     "https://imdb-api.com/en/API/Title/k_89zn0ste/" +
     clickedID +
-    "/Trailer,Ratings,Wikipedia";
+    "/Ratings,Wikipedia";
 
   axios
     .get(url1)
