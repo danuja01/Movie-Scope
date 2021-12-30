@@ -30,7 +30,7 @@ app.post("/", (req, res) => {
 
 app.get("/result", (req, res) => {
   const url =
-    "https://imdb-api.com/en/API/SearchMovie/k_x5ev0pv7/" + searchTitle;
+    "https://imdb-api.com/en/API/SearchMovie/k_89zn0ste/" + searchTitle;
 
   axios
     .get(url)
@@ -60,7 +60,7 @@ app.post("/result", (req, res) => {
 
 app.get("/details", (req, res) => {
   const url1 =
-    "https://imdb-api.com/en/API/Title/k_x5ev0pv7/" +
+    "https://imdb-api.com/en/API/Title/k_89zn0ste/" +
     clickedID +
     "/Trailer,Ratings,Wikipedia";
 
