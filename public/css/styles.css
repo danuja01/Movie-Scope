@@ -21,13 +21,29 @@ body {
   font-family: "Open Sans", Arial, Helvetica, Sans-Serif;
 }
 
-footer {
+.mask {
   background-color: rgba(0, 0, 0, 0.8);
-  padding-bottom: 20px;
-  height: auto;
+  text-align: center;
+  height: 90%;
 }
 
-/* Height for devices larger than 576px */
+input[type="text"] {
+  width: 300px;
+  padding: 11.5px;
+  margin: 10px auto;
+}
+
+button {
+  margin: 10px 25px;
+}
+
+/* Footer  */
+
+footer {
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 90px;
+}
+
 @media (max-width: 988px) {
   h1 {
     font-size: 50px;
@@ -43,20 +59,4 @@ footer {
     margin: 25px;
     width: 300px;
   }
-}
-
-.mask {
-  background-color: rgba(0, 0, 0, 0.8);
-  text-align: center;
-  height: 90%;
-}
-
-input[type="text"] {
-  width: 300px;
-  padding: 11.5px;
-  margin: 10px auto;
-}
-
-button {
-  margin: 10px 25px;
 }

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>details</title>
+
+    <!-- Bootstrap -->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="/css/Details.css" />
+
+    <!-- Font Awesome  -->
+    <script
+      src="https://kit.fontawesome.com/fbf17b5b56.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <section id="navebar">
+      <nav class="navbar navbar-expand-lg navbar-light bg-Secondary">
+        <div class="container">
+          <a href="/" class="navbar-brand">
+            <img
+              src="/images/micon.png"
+              alt=""
+              width="40"
+              height="40"
+              class="mx-2"
+            />
+            THE MOVIE SCOPE</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <form class="d-flex ms-auto" action="/result">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="search movies"
+              />
+              <button class="btn btn-md btn-outline-dark px-4 ms-2">
+                <i class="fas fa-search"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </section>
+
+    <section id="details">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-4">
+            <img src="<%= image %>" class="card-img" alt="" />
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-8 movie-info">
+            <h1><%=name%></h1>
+
+            <div class="discription">
+              <p><%=desc%></p>
+            </div>
+            <div class="row discription">
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <ul class="list-group list-group-flush ul-color">
+                  <li class="list-group-item list-item-color">
+                    Genre - <%=genre%>
+                  </li>
+                  <li class="list-group-item list-item-color">
+                    Director - <%=director%>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <ul class="list-group list-group-flush ul-color">
+                  <li class="list-group-item list-item-color">
+                    Language - <%=lan%>
+                  </li>
+                  <li class="list-group-item list-item-color">
+                    Year - <%=year%>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="row discription">
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="row discription">
+                  <div class="col-md-6 col-xs-6 rating-card">
+                    <img
+                      class="rating-image"
+                      src="/images/imdb.png"
+                      alt="IMDB"
+                    />
+                    <h5 class="rating-text card-text"><%=imdb%> / 10</h5>
+                  </div>
+                  <div class="col-md-6 col-xs-6">
+                    <img
+                      class="rating-image"
+                      src="/images/rotten.png"
+                      style="padding: 10px 0"
+                      alt="IMDB"
+                    />
+                    <h5 class="rating-text card-text"><%=rotten%>%</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <a
+                  class="btn btn-lg btn-danger w-100"
+                  style="margin: 34px 0 20px"
+                >
+                  <i class="fab fa-youtube"></i> Watch Trailer
+                </a>
+              </div>
+            </div>
+            <div class="discription">
+              <div class="d-flex">
+                <a
+                  class="btn btn-outline-light plot w-100"
+                  data-bs-toggle="collapse"
+                  href="#plot"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                >
+                  PLOT
+                </a>
+                <a
+                  class="btn btn-outline-light plot w-100 ms-2"
+                  data-bs-toggle="collapse"
+                  href="#cast"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                >
+                  CAST
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="collapse" id="plot">
+          <div class=""><%=plot%></div>
+        </div>
+        <div class="collapse" id="cast">
+          <div class="row" style="text-align: center">
+            <%for(let i=0 ; i > castname.length ; i++) {%>
+            <div class="col-md-3 col-sm-4">
+              <img src="<%=castimg[i]%>" class="card-img cast-img" alt="" />
+              <p>name: <%=castname[i]%></p>
+              <p>Character: <%=castcar[i]%> / Spider-Man</p>
+            </div>
+            <%}%>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
